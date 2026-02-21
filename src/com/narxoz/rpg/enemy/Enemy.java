@@ -3,7 +3,23 @@ package com.narxoz.rpg.enemy;
 import com.narxoz.rpg.combat.Ability;
 import com.narxoz.rpg.loot.LootTable;
 
-import java.util.List;
+import java.util.*;
+public interface Enemy {
+    String getName();
+    int getHealth();
+    int getDamage();
+    int getSpeed();
+    List<Ability> getAbilities();
+    LootTable getLootTable();
+
+    void setName(String name);
+    void setHealth(int health);
+    void setDamage(int damage);
+    void setSpeed(int speed);
+    void displayInfo();
+    Enemy clone();
+
+}
 
 /**
  * Base interface for all enemies in the RPG system.
@@ -58,32 +74,29 @@ import java.util.List;
  *   - Should clone() return a mutable or immutable copy?
  *   - How do you allow Prototype to modify cloned stats?
  */
-public interface Enemy {
 
-    // TODO: Define core stat methods
-    // - String getName()
-    // - int getHealth()
-    // - int getDamage()
-    // - int getDefense()
-    // - int getSpeed()
+// TODO: Define core stat methods
+// - String getName()
+// - int getHealth()
+// - int getDamage()
+// - int getDefense()
+// - int getSpeed()
 
-    // TODO: Define ability methods
-    // - List<Ability> getAbilities()
+// TODO: Define ability methods
+// - List<Ability> getAbilities()
 
-    // TODO: Define loot methods
-    // - LootTable getLootTable()
+// TODO: Define loot methods
+// - LootTable getLootTable()
 
-    // TODO: Define display method
-    // - void displayInfo()   (shows all stats, abilities, loot)
+// TODO: Define display method
+// - void displayInfo()   (shows all stats, abilities, loot)
 
-    // TODO: Define clone method for Prototype pattern
-    // - Enemy clone()
-    //
-    // CRITICAL: This must perform DEEP COPY!
-    // If you do shallow copy, cloned enemies will share ability
-    // and loot references with the original — causing bugs!
-    //
-    // Test your clone: modify the clone's abilities.
-    // Does the original change? If yes → your copy is too shallow!
-
-}
+// TODO: Define clone method for Prototype pattern
+// - Enemy clone()
+//
+// CRITICAL: This must perform DEEP COPY!
+// If you do shallow copy, cloned enemies will share ability
+// and loot references with the original — causing bugs!
+//
+// Test your clone: modify the clone's abilities.
+// Does the original change? If yes → your copy is too shallow!
